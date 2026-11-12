@@ -1,0 +1,7 @@
+{
+  "name": "seo-audit",
+  "author": {
+    "name": "lebeDEV02"
+  },
+  "description": "Weekly technical SEO audit: reachability, rendering, indexability, on-page, structured data, Core Web Vitals, accessibility and LLM access. Scripts measure, Claude explains what to fix, where, and what it affects."
+}

@@ -1,0 +1,17 @@
+{
+  "name": "seo-plugin",
+  "description": "Technical SEO audit plugin for Claude Code",
+  "metadata": {
+    "description": "Technical SEO audit plugin for Claude Code"
+  },
+  "owner": {
+    "name": "lebeDEV02"
+  },
+  "plugins": [
+    {
+      "name": "seo-audit",
+      "source": "./plugins/seo-audit",
+      "description": "Weekly technical SEO audit: scripts measure the site, Claude explains what to fix, where, and what it affects"
+    }
+  ]
+}

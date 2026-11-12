@@ -1,0 +1,5 @@
+node_modules/
+.seo-audit/
+.env
+.env.*
+.DS_Store
