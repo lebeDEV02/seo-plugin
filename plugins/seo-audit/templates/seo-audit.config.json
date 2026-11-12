@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/lebeDEV02/seo-plugin/main/plugins/seo-audit/schema/config.schema.json",
+  "site": "https://example.com",
+  "keyPages": ["/"],
+  "crawl": {
+    "maxPages": 300,
+    "concurrency": 4,
+    "delayMs": 100,
+    "exclude": ["/cdn-cgi/*"]
+  },
+  "expect": {
+    "noindex": []
+  },
+  "aiCrawlers": {
+    "training": "any",
+    "search": "allow",
+    "user": "allow"
+  },
+  "llmsTxt": "optional",
+  "ignore": []
+}

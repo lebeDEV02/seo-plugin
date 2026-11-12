@@ -2,7 +2,7 @@
 
 Плагин `seo-audit` для Claude Code: еженедельный технический SEO-аудит сайта с отчётом — что поправить, где, как и на что это повлияет.
 
-**Статус: каркас.** Манифесты и два скилла-заглушки. Проверки ещё не реализованы.
+**Статус: работает HTTP-часть.** Доступность, индексация по сырому HTML, on-page, синтаксис разметки и доступность для LLM проверяются. Рендеринг в браузере, скорость, accessibility, Search Console и сравнение с прошлым запуском ещё не реализованы.
 
 ## Принцип
 
@@ -42,6 +42,20 @@ claude plugin install seo-audit@seo-plugin
 
 Скиллы: `/seo-audit:audit` и `/seo-audit:setup`.
 
+## Запуск без Claude
+
+Сбор и оценка — обычный скрипт на Node 20+:
+
+```bash
+cd plugins/seo-audit && npm ci
+```
+
+```bash
+node plugins/seo-audit/scripts/cli.mjs run --config seo-audit.config.json
+```
+
+Минимальный конфиг — `{ "site": "https://example.com" }`; все параметры описаны в `plugins/seo-audit/templates/seo-audit.config.json` и `schema/config.schema.json`. Результат ложится в `.seo-audit/runs/<время>/`: `findings.json` с находками и `raw/` с собранными фактами.
+
 ## Разработка
 
 Плагин можно подключить из локальной папки без публикации:
@@ -56,21 +70,34 @@ claude --plugin-dir ./plugins/seo-audit
 claude plugin validate .
 ```
 
+Тесты:
+
+```bash
+cd plugins/seo-audit && npm test
+```
+
 ## Структура
 
 ```
 .claude-plugin/marketplace.json
 plugins/seo-audit/
 ├── .claude-plugin/plugin.json
-└── skills/
-    ├── audit/SKILL.md
-    └── setup/SKILL.md
+├── skills/                 # audit, setup
+├── scripts/
+│   ├── cli.mjs             # run: сбор, оценка, запись результата
+│   ├── collect/            # site.mjs — проверки сайта, pages.mjs — обход
+│   ├── evaluate/           # каталог правил и сами правила
+│   └── lib/                # http, robots, sitemap, html, config
+├── rules/ai-crawlers.json  # AI-боты и их классы
+├── schema/                 # схема конфига
+├── templates/              # пример конфига
+└── test/
 ```
 
 ## План
 
 - [x] Каркас: манифесты и скиллы-заглушки
-- [ ] HTTP-сбор и правила: доступность, `robots.txt`, sitemap, on-page, доступность для LLM
+- [x] HTTP-сбор и правила: доступность, `robots.txt`, sitemap, on-page, доступность для LLM
 - [ ] Chrome-сбор: рендеринг, «открывается в браузере», axe-core
 - [ ] Сравнение с прошлым запуском и отчёт
 - [ ] Скорость: Lighthouse и CrUX
