@@ -49,6 +49,53 @@
         }
       }
     },
+    "browser": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Pages opened in headless Chrome for rendering and accessibility checks: every key page, then pages of each URL template in turn.",
+      "properties": {
+        "enabled": { "type": "boolean", "default": true },
+        "maxPages": { "type": "integer", "minimum": 1, "default": 40 },
+        "perTemplate": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 2,
+          "description": "How many pages of one URL template (for example /blog/*) to open."
+        },
+        "timeoutMs": { "type": "integer", "minimum": 1000, "default": 30000 },
+        "expectSelector": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "A CSS selector that must exist on every rendered page, for example \"main h1\". Catches pages that load but render nothing useful."
+        }
+      }
+    },
+    "performance": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Lighthouse runs on the key pages. Real-user data comes from the Chrome UX Report when GOOGLE_API_KEY is set.",
+      "properties": {
+        "enabled": { "type": "boolean", "default": true },
+        "maxPages": { "type": "integer", "minimum": 1, "default": 5 },
+        "runs": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 5,
+          "description": "Lighthouse runs per page; the median one is kept. Fewer runs are faster and noisier."
+        }
+      }
+    },
+    "searchConsole": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "property": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "The Search Console property, exactly as it is named there: \"sc-domain:example.com\" or \"https://example.com/\". Credentials come from GSC_SERVICE_ACCOUNT_KEY."
+        }
+      }
+    },
     "expect": {
       "type": "object",
       "additionalProperties": false,
@@ -88,8 +135,27 @@
           "default": 100,
           "description": "Fewer words than this in the HTML before JavaScript runs counts as an empty page for crawlers that do not render."
         },
+        "renderedWordsMin": {
+          "type": "integer",
+          "default": 50,
+          "description": "Fewer words than this on a page rendered in a browser counts as a blank page."
+        },
         "tlsDaysHigh": { "type": "integer", "default": 21 },
-        "tlsDaysCritical": { "type": "integer", "default": 7 }
+        "tlsDaysCritical": { "type": "integer", "default": 7 },
+        "labScoreMedium": {
+          "type": "number",
+          "default": 0.75,
+          "description": "Lighthouse performance score (0 to 1) below which a page is a medium finding."
+        },
+        "labScoreHigh": { "type": "number", "default": 0.5 },
+        "searchMinClicks": {
+          "type": "integer",
+          "default": 50,
+          "description": "A site-wide drop in clicks is only reported when the previous week had at least this many."
+        },
+        "searchClicksDrop": { "type": "number", "default": 0.25 },
+        "searchPageMinClicks": { "type": "integer", "default": 20 },
+        "searchPageClicksDrop": { "type": "number", "default": 0.5 }
       }
     },
     "ignore": {

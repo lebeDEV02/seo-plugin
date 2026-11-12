@@ -101,6 +101,75 @@ export const RULES = {
 
   // Structured data
   'schema.jsonld-invalid': { severity: 'medium', summary: 'A JSON-LD block is not valid JSON' },
+  // Low: the page is indexed as before, it only stays ineligible for the rich result.
+  'schema.missing-required': {
+    severity: 'low',
+    summary: 'Structured data lacks a property Google requires for the rich result',
+  },
+  'schema.no-rich-result': {
+    severity: 'info',
+    summary: 'Structured data of a type that no longer earns a rich result in Google',
+  },
+
+  // Rendering in a browser
+  'render.load-failed': { severity: 'high', summary: 'A page fails to load in a browser' },
+  'render.blank-page': { severity: 'high', summary: 'A page renders almost no text in a browser' },
+  'render.selector-missing': {
+    severity: 'high',
+    summary: 'The element named in browser.expectSelector is not on the rendered page',
+  },
+  'render.js-error': {
+    severity: 'medium',
+    summary: 'An uncaught JavaScript error is thrown while the page loads',
+  },
+  'render.request-failed': {
+    severity: 'medium',
+    summary: 'A request the page makes while loading fails',
+  },
+  'render.head-changed-by-js': {
+    severity: 'high',
+    summary: 'JavaScript changes the title, canonical or robots directive that the HTML declares',
+  },
+  'render.head-added-by-js': {
+    severity: 'medium',
+    summary: 'The title, description or canonical exists only after JavaScript runs',
+  },
+  'render.content-needs-js': {
+    severity: 'medium',
+    summary: 'Most of the page text appears only after JavaScript runs',
+  },
+  'render.links-need-js': { severity: 'medium', summary: 'Most links appear only after JavaScript runs' },
+  'render.never-idle': { severity: 'info', summary: 'The page never stops making network requests' },
+
+  // Accessibility (one finding per axe-core rule; the summary is replaced by that rule's text)
+  'a11y.violation': { severity: 'medium', summary: 'An accessibility rule is violated' },
+
+  // Performance
+  'perf.lab-failed': { severity: 'info', summary: 'Lighthouse could not measure a page' },
+  'perf.lab-score': { severity: 'medium', summary: 'The Lighthouse performance score is low' },
+  'perf.lab-lcp': { severity: 'medium', summary: 'Largest Contentful Paint is slow in the lab' },
+  'perf.lab-tbt': { severity: 'medium', summary: 'Total Blocking Time is high in the lab' },
+  'perf.lab-cls': { severity: 'medium', summary: 'Cumulative Layout Shift is high in the lab' },
+  'perf.field-lcp': { severity: 'medium', summary: 'Real users get a slow Largest Contentful Paint' },
+  'perf.field-inp': { severity: 'medium', summary: 'Real users get a slow Interaction to Next Paint' },
+  'perf.field-cls': { severity: 'medium', summary: 'Real users get a high Cumulative Layout Shift' },
+  'perf.field-ttfb': { severity: 'low', summary: 'Real users get a slow server response' },
+
+  // Search Console
+  'search.clicks-drop': {
+    severity: 'high',
+    summary: 'Clicks from Google Search fell sharply against the previous week',
+  },
+  'search.page-clicks-drop': {
+    severity: 'medium',
+    summary: 'A page lost most of its clicks from Google Search against the previous week',
+  },
+  'search.not-indexed': { severity: 'high', summary: 'Google reports a key page as not indexed' },
+  'search.google-canonical-differs': {
+    severity: 'medium',
+    summary: 'Google chose a different canonical URL from the one the page declares',
+  },
+  'search.sitemap-errors': { severity: 'medium', summary: 'Search Console reports errors in a submitted sitemap' },
 
   // LLM access
   'llm.robots-policy-mismatch': {

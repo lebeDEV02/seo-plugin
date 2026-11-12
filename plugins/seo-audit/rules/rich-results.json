@@ -1,0 +1,77 @@
+{
+  "reviewed": "2026-11-12",
+  "source": "https://developers.google.com/search/docs/appearance/structured-data/search-gallery",
+  "note": "Required properties per Google's structured data documentation, read on the review date. A path with dots is a nested property; for an array it is met when any element has it. anyOf groups need at least one path. each validates every element under a path, inline or by ref to another entry. Types that are not listed are not validated, and Article and Organization are absent on purpose: Google documents no required properties for them.",
+  "types": [
+    {
+      "feature": "Breadcrumb",
+      "types": ["BreadcrumbList"],
+      "required": ["itemListElement"],
+      "minItems": { "itemListElement": 2 },
+      "each": {
+        "itemListElement": { "required": ["position"], "anyOf": [["name", "item.name"]] }
+      }
+    },
+    {
+      "feature": "Product snippet",
+      "types": ["Product"],
+      "required": ["name"],
+      "anyOf": [["review", "aggregateRating", "offers"]],
+      "each": {
+        "offers": { "anyOf": [["price", "priceSpecification.price", "lowPrice"]] },
+        "aggregateRating": { "ref": "AggregateRating" }
+      }
+    },
+    {
+      "feature": "Software app",
+      "types": ["SoftwareApplication", "MobileApplication", "WebApplication"],
+      "required": ["name", "offers.price"],
+      "anyOf": [["aggregateRating", "review"]],
+      "each": {
+        "aggregateRating": { "ref": "AggregateRating" }
+      }
+    },
+    {
+      "feature": "Video",
+      "types": ["VideoObject"],
+      "required": ["name", "thumbnailUrl", "uploadDate"]
+    },
+    {
+      "feature": "Event",
+      "types": ["Event"],
+      "required": ["name", "startDate", "location"],
+      "anyOf": [["location.address", "location.url"]]
+    },
+    {
+      "feature": "Local business",
+      "types": ["LocalBusiness"],
+      "required": ["name", "address"]
+    },
+    {
+      "feature": "Job posting",
+      "types": ["JobPosting"],
+      "required": ["title", "description", "datePosted", "hiringOrganization"],
+      "anyOf": [["jobLocation", "applicantLocationRequirements"]]
+    },
+    {
+      "feature": "Recipe",
+      "types": ["Recipe"],
+      "required": ["name", "image"]
+    },
+    {
+      "feature": "Review snippet",
+      "types": ["Review"],
+      "required": ["author", "reviewRating.ratingValue"]
+    },
+    {
+      "feature": "Review snippet",
+      "types": ["AggregateRating"],
+      "required": ["ratingValue"],
+      "anyOf": [["ratingCount", "reviewCount"]]
+    }
+  ],
+  "withoutRichResult": {
+    "FAQPage": "Google stopped showing FAQ rich results on 7 May 2026 and removed the documentation on 15 June 2026. The markup is harmless but no longer earns a rich result.",
+    "HowTo": "HowTo is not in Google's structured data gallery; the markup no longer earns a rich result."
+  }
+}

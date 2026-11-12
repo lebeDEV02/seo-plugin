@@ -7,22 +7,37 @@ const NON_CONTENT = new Set(['script', 'style', 'template', 'svg']);
 const clean = (text) => text.replace(/\s+/g, ' ').trim();
 const countWords = (text) => text.match(/[\p{L}\p{N}]+/gu)?.length ?? 0;
 
+/** Keep the shape of a JSON-LD node but drop bulk: long strings, long arrays, deep nesting. */
+function compact(value, depth = 0) {
+  if (typeof value === 'string') return value.length > 160 ? `${value.slice(0, 160)}…` : value;
+  if (Array.isArray(value)) return value.slice(0, 25).map((item) => compact(item, depth + 1));
+  if (!value || typeof value !== 'object') return value;
+  if (depth >= 5) return {};
+  return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, compact(item, depth + 1)]));
+}
+
 function parseJsonLd(text) {
   let data;
   try {
     data = JSON.parse(text);
   } catch (error) {
-    return { valid: false, error: String(error.message).slice(0, 160), types: [] };
+    return { valid: false, error: String(error.message).slice(0, 160), types: [], nodes: [] };
   }
-  const types = [];
+  const nodes = [];
   const visit = (node) => {
     if (Array.isArray(node)) return node.forEach(visit);
     if (!node || typeof node !== 'object') return;
-    if (node['@type']) types.push(...[].concat(node['@type']));
+    if (node['@type']) nodes.push(node);
     if (node['@graph']) visit(node['@graph']);
   };
   visit(data);
-  return { valid: true, error: null, types: [...new Set(types)] };
+  return {
+    valid: true,
+    error: null,
+    types: [...new Set(nodes.flatMap((node) => [].concat(node['@type'])))],
+    // Top-level and @graph nodes, for checking required properties.
+    nodes: nodes.map(({ '@graph': _graph, ...node }) => compact(node)),
+  };
 }
 
 /**
