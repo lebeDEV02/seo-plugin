@@ -119,7 +119,9 @@ test('html: JSON-LD blocks are parsed and broken ones are reported', () => {
     </body></html>`,
     'https://example.com/',
   );
-  assert.deepEqual(page.jsonld[0], { valid: true, error: null, types: ['Organization', 'WebSite', 'Thing'] });
+  assert.equal(page.jsonld[0].valid, true);
+  assert.deepEqual(page.jsonld[0].types, ['Organization', 'WebSite', 'Thing']);
+  assert.deepEqual(page.jsonld[0].nodes, [{ '@type': 'Organization' }, { '@type': ['WebSite', 'Thing'] }]);
   assert.equal(page.jsonld[1].valid, false);
   assert.equal(page.wordCount, 0, 'JSON-LD is not page text');
 });
@@ -133,9 +135,10 @@ test('html: a client-rendered shell has no words', () => {
   assert.equal(page.title, 'App');
 });
 
-test('urlPattern: shallow paths stay exact, deeper ones collapse', () => {
+test('urlPattern: shallow paths stay exact, deeper ones collapse to their parent', () => {
   assert.equal(urlPattern('https://example.com/'), '/');
   assert.equal(urlPattern('https://example.com/pricing'), '/pricing');
   assert.equal(urlPattern('https://example.com/blog/post-1?x=1'), '/blog/*');
-  assert.equal(urlPattern('https://example.com/blog/2026/post'), '/blog/*');
+  assert.equal(urlPattern('https://example.com/learn/glossary/term/'), '/learn/glossary/*');
+  assert.equal(urlPattern('https://example.com/learn/blog/tag/news/'), '/learn/blog/tag/*');
 });

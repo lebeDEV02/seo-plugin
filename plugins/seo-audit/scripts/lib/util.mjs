@@ -49,10 +49,11 @@ export function pathOf(url) {
 
 /**
  * Collapse a URL into a template so that many pages with the same problem become one finding:
- * "/" and one-segment paths stay as they are, deeper paths become "/first-segment/*".
+ * "/" and one-segment paths stay as they are, deeper paths become "/parent/path/*".
+ * Pages that share a parent path are almost always built from one template.
  */
 export function urlPattern(url) {
   const { pathname } = new URL(url);
   const segments = pathname.split('/').filter(Boolean);
-  return segments.length <= 1 ? pathname : `/${segments[0]}/*`;
+  return segments.length <= 1 ? pathname : `/${segments.slice(0, -1).join('/')}/*`;
 }

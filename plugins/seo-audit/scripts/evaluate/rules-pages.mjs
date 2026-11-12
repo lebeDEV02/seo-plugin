@@ -42,12 +42,11 @@ function duplicates(pages, pick) {
 }
 
 /** Rules that look at each crawled URL: status, indexability, on-page elements, raw content. */
-export function pageRules({ site, pages, skipped, config }) {
+export function pageRules({ site, pages, skipped, config, isKey, weigh }) {
   const findings = [];
   const limits = config.thresholds;
-  const keyUrls = new Set(config.keyPages.map((path) => normalizeUrl(path, config.origin)));
-  const isKey = (url) => keyUrls.has(url);
-  const add = (rule, matches, options) => findings.push(...pageFindings(rule, matches, { isKey, ...options }));
+  const add = (rule, matches, options) =>
+    findings.push(...pageFindings(rule, matches, { isKey, weigh, ...options }));
 
   const byUrl = new Map(pages.map((page) => [page.url, page]));
   const otherHost = site.host.startsWith('www.') ? site.host.slice(4) : `www.${site.host}`;

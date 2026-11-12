@@ -8,6 +8,20 @@
     "delayMs": 100,
     "exclude": ["/cdn-cgi/*"]
   },
+  "browser": {
+    "enabled": true,
+    "maxPages": 40,
+    "perTemplate": 2,
+    "expectSelector": null
+  },
+  "performance": {
+    "enabled": true,
+    "maxPages": 5,
+    "runs": 5
+  },
+  "searchConsole": {
+    "property": null
+  },
   "expect": {
     "noindex": []
   },
