@@ -1,0 +1,1335 @@
+{
+  "site": "https://debridge.com",
+  "collectedAt": "2026-11-12T17:33:41.339Z",
+  "coverage": {
+    "checked": [
+      "reachability (HTTP, TLS, redirects, robots.txt, sitemaps)",
+      "indexability from raw HTML (canonical, robots, hreflang, duplicates)",
+      "on-page elements and internal links",
+      "structured data syntax (JSON-LD parses)",
+      "LLM access (robots.txt policy, crawler user-agent probes, raw HTML text, llms.txt)"
+    ],
+    "notChecked": [
+      "rendering in a browser (JavaScript errors, raw vs rendered HTML)",
+      "performance (Core Web Vitals, Lighthouse)",
+      "accessibility",
+      "Search Console data (index status, clicks, impressions)",
+      "structured data required fields",
+      "comparison with the previous run"
+    ],
+    "urlsFetched": 578,
+    "htmlPages": 534,
+    "sitemapUrls": 490,
+    "sitemapFiles": 27,
+    "sitemapTruncated": false,
+    "skippedByRobots": 0,
+    "skippedByFilters": 1,
+    "skippedByLimit": 0
+  },
+  "counts": {
+    "critical": 0,
+    "high": 3,
+    "medium": 10,
+    "low": 34,
+    "info": 2
+  },
+  "findings": [
+    {
+      "id": "index.canonical-target-not-200|/legal/",
+      "rule": "index.canonical-target-not-200",
+      "group": "index",
+      "severity": "high",
+      "summary": "The canonical points to a URL that redirects or does not return 200",
+      "scope": "page",
+      "pattern": "/legal/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/legal/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/legal/",
+          "canonical": "https://debridge.com/legal",
+          "status": 200,
+          "finalUrl": "https://debridge.com/legal/"
+        }
+      ]
+    },
+    {
+      "id": "index.canonical-target-not-200|/security/",
+      "rule": "index.canonical-target-not-200",
+      "group": "index",
+      "severity": "high",
+      "summary": "The canonical points to a URL that redirects or does not return 200",
+      "scope": "page",
+      "pattern": "/security/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/security/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/security/",
+          "canonical": "https://debridge.com/security",
+          "status": 200,
+          "finalUrl": "https://debridge.com/security/"
+        }
+      ]
+    },
+    {
+      "id": "index.canonical-target-not-200|/vibe-trading/",
+      "rule": "index.canonical-target-not-200",
+      "group": "index",
+      "severity": "high",
+      "summary": "The canonical points to a URL that redirects or does not return 200",
+      "scope": "page",
+      "pattern": "/vibe-trading/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/vibe-trading/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/vibe-trading/",
+          "canonical": "https://debridge.com/vibe-trading",
+          "status": 200,
+          "finalUrl": "https://debridge.com/vibe-trading/"
+        }
+      ]
+    },
+    {
+      "id": "onpage.description-missing|/learn/*",
+      "rule": "onpage.description-missing",
+      "group": "onpage",
+      "severity": "medium",
+      "summary": "A page has no meta description",
+      "scope": "page",
+      "pattern": "/learn/*",
+      "count": 5,
+      "urls": [
+        "https://debridge.com/learn/blog/help/",
+        "https://debridge.com/learn/blog/tag/validators/",
+        "https://debridge.com/learn/blog/tag/monthly-update/",
+        "https://debridge.com/learn/blog/tag/integration/",
+        "https://debridge.com/learn/glossary/author/debridge/"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "onpage.h1-missing|/learn/*",
+      "rule": "onpage.h1-missing",
+      "group": "onpage",
+      "severity": "medium",
+      "summary": "A page has no h1",
+      "scope": "page",
+      "pattern": "/learn/*",
+      "count": 4,
+      "urls": [
+        "https://debridge.com/learn/blog/tag/validators/",
+        "https://debridge.com/learn/blog/tag/monthly-update/",
+        "https://debridge.com/learn/blog/tag/integration/",
+        "https://debridge.com/learn/glossary/author/debridge/"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "index.canonical-missing|/about-us/",
+      "rule": "index.canonical-missing",
+      "group": "index",
+      "severity": "medium",
+      "summary": "A page has no usable canonical link",
+      "scope": "page",
+      "pattern": "/about-us/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/about-us/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/about-us/",
+          "declared": null
+        }
+      ]
+    },
+    {
+      "id": "index.canonical-missing|/brand/",
+      "rule": "index.canonical-missing",
+      "group": "index",
+      "severity": "medium",
+      "summary": "A page has no usable canonical link",
+      "scope": "page",
+      "pattern": "/brand/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/brand/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/brand/",
+          "declared": null
+        }
+      ]
+    },
+    {
+      "id": "onpage.description-missing|/case-studies/*",
+      "rule": "onpage.description-missing",
+      "group": "onpage",
+      "severity": "medium",
+      "summary": "A page has no meta description",
+      "scope": "page",
+      "pattern": "/case-studies/*",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/case-studies/about/"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "onpage.description-missing|/support/*",
+      "rule": "onpage.description-missing",
+      "group": "onpage",
+      "severity": "medium",
+      "summary": "A page has no meta description",
+      "scope": "page",
+      "pattern": "/support/*",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/support/author/debridge/"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "onpage.h1-missing|/learn/",
+      "rule": "onpage.h1-missing",
+      "group": "onpage",
+      "severity": "medium",
+      "summary": "A page has no h1",
+      "scope": "page",
+      "pattern": "/learn/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/learn/"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "onpage.h1-missing|/support/*",
+      "rule": "onpage.h1-missing",
+      "group": "onpage",
+      "severity": "medium",
+      "summary": "A page has no h1",
+      "scope": "page",
+      "pattern": "/support/*",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/support/author/debridge/"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "reach.sitemap-url-not-canonical|/legal/",
+      "rule": "reach.sitemap-url-not-canonical",
+      "group": "reach",
+      "severity": "medium",
+      "summary": "A URL listed in the sitemap declares a different canonical URL",
+      "scope": "page",
+      "pattern": "/legal/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/legal/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/legal/",
+          "canonical": "https://debridge.com/legal"
+        }
+      ]
+    },
+    {
+      "id": "reach.sitemap-url-not-canonical|/security/",
+      "rule": "reach.sitemap-url-not-canonical",
+      "group": "reach",
+      "severity": "medium",
+      "summary": "A URL listed in the sitemap declares a different canonical URL",
+      "scope": "page",
+      "pattern": "/security/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/security/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/security/",
+          "canonical": "https://debridge.com/security"
+        }
+      ]
+    },
+    {
+      "id": "onpage.description-length|/learn/*",
+      "rule": "onpage.description-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The meta description is too short or too long",
+      "scope": "page",
+      "pattern": "/learn/*",
+      "count": 153,
+      "urls": [
+        "https://debridge.com/learn/blog/arc-is-live-on-debridge/",
+        "https://debridge.com/learn/blog/introducing-debridge-mcp-universal-api-for-ai-agents/",
+        "https://debridge.com/learn/blog/megaeth-is-live-on-debridge/",
+        "https://debridge.com/learn/blog/cronos-is-live-on-debridge/",
+        "https://debridge.com/learn/blog/introducing-debridge-bundles/",
+        "https://debridge.com/learn/blog/monad-is-live-on-debridge/",
+        "https://debridge.com/learn/blog/injective-evm-is-live-on-debridge/",
+        "https://debridge.com/learn/blog/snapshot-of-s2-and-launch-of-s3/",
+        "https://debridge.com/learn/blog/introducing-samechain-meta-aggregation/",
+        "https://debridge.com/learn/blog/plasma-is-live-on-debridge/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/learn/blog/arc-is-live-on-debridge/",
+          "length": 203
+        },
+        {
+          "url": "https://debridge.com/learn/blog/introducing-debridge-mcp-universal-api-for-ai-agents/",
+          "length": 180
+        },
+        {
+          "url": "https://debridge.com/learn/blog/megaeth-is-live-on-debridge/",
+          "length": 192
+        },
+        {
+          "url": "https://debridge.com/learn/blog/cronos-is-live-on-debridge/",
+          "length": 180
+        },
+        {
+          "url": "https://debridge.com/learn/blog/introducing-debridge-bundles/",
+          "length": 220
+        }
+      ]
+    },
+    {
+      "id": "onpage.orphan-page|/learn/*",
+      "rule": "onpage.orphan-page",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "A page is in the sitemap but cannot be reached by links from the home page",
+      "scope": "page",
+      "pattern": "/learn/*",
+      "count": 142,
+      "urls": [
+        "https://debridge.com/learn/guides/bridge-from-ethereum-to-solana/",
+        "https://debridge.com/learn/guides/send-usdc-to-ethereum-wallet/",
+        "https://debridge.com/learn/guides/guide-on-dex-screener/",
+        "https://debridge.com/learn/guides/best-bnb-bridges/",
+        "https://debridge.com/learn/guides/bridge-to-story-protocol/",
+        "https://debridge.com/learn/blog/help/",
+        "https://debridge.com/learn/blog/debridge-launches-iaas-with-neon-evm-as-first-chain/",
+        "https://debridge.com/learn/blog/gnosis-chain-is-live-on-debridge/",
+        "https://debridge.com/learn/blog/lightlink-is-live-on-debridge/",
+        "https://debridge.com/learn/blog/metis-is-live-on-debridge/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/learn/guides/bridge-from-ethereum-to-solana/",
+          "inlinks": 1
+        },
+        {
+          "url": "https://debridge.com/learn/guides/send-usdc-to-ethereum-wallet/",
+          "inlinks": 0
+        },
+        {
+          "url": "https://debridge.com/learn/guides/guide-on-dex-screener/",
+          "inlinks": 0
+        },
+        {
+          "url": "https://debridge.com/learn/guides/best-bnb-bridges/",
+          "inlinks": 0
+        },
+        {
+          "url": "https://debridge.com/learn/guides/bridge-to-story-protocol/",
+          "inlinks": 0
+        }
+      ]
+    },
+    {
+      "id": "onpage.title-length|/learn/*",
+      "rule": "onpage.title-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The title is too short or too long",
+      "scope": "page",
+      "pattern": "/learn/*",
+      "count": 73,
+      "urls": [
+        "https://debridge.com/learn/glossary/address-2/",
+        "https://debridge.com/learn/glossary/airdrop-2/",
+        "https://debridge.com/learn/glossary/alpha/",
+        "https://debridge.com/learn/glossary/altcoin/",
+        "https://debridge.com/learn/glossary/arbitrage/",
+        "https://debridge.com/learn/glossary/asset/",
+        "https://debridge.com/learn/glossary/audit/",
+        "https://debridge.com/learn/glossary/bags-2/",
+        "https://debridge.com/learn/glossary/bep-20/",
+        "https://debridge.com/learn/glossary/bitcoin/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/learn/glossary/address-2/",
+          "length": 7,
+          "title": "Address"
+        },
+        {
+          "url": "https://debridge.com/learn/glossary/airdrop-2/",
+          "length": 7,
+          "title": "Airdrop"
+        },
+        {
+          "url": "https://debridge.com/learn/glossary/alpha/",
+          "length": 5,
+          "title": "Alpha"
+        },
+        {
+          "url": "https://debridge.com/learn/glossary/altcoin/",
+          "length": 7,
+          "title": "Altcoin"
+        },
+        {
+          "url": "https://debridge.com/learn/glossary/arbitrage/",
+          "length": 9,
+          "title": "Arbitrage"
+        }
+      ]
+    },
+    {
+      "id": "onpage.description-length|/support/*",
+      "rule": "onpage.description-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The meta description is too short or too long",
+      "scope": "page",
+      "pattern": "/support/*",
+      "count": 21,
+      "urls": [
+        "https://debridge.com/support/what-is-market-bridging/",
+        "https://debridge.com/support/why-isnt-my-bridging-order-executed-instantly-sometimes/",
+        "https://debridge.com/support/how-can-i-cancel-an-order/",
+        "https://debridge.com/support/if-i-cancel-a-transaction-will-i-get-my-fees-back/",
+        "https://debridge.com/support/how-does-dao-staking-work/",
+        "https://debridge.com/support/what-are-the-daos-objectives/",
+        "https://debridge.com/support/what-is-the-debridge-dao/",
+        "https://debridge.com/support/what-is-deport/",
+        "https://debridge.com/support/when-should-i-use-deport-vs-standard-debridge-bridging/",
+        "https://debridge.com/support/how-do-i-check-the-status-of-my-transaction/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/support/what-is-market-bridging/",
+          "length": 241
+        },
+        {
+          "url": "https://debridge.com/support/why-isnt-my-bridging-order-executed-instantly-sometimes/",
+          "length": 176
+        },
+        {
+          "url": "https://debridge.com/support/how-can-i-cancel-an-order/",
+          "length": 260
+        },
+        {
+          "url": "https://debridge.com/support/if-i-cancel-a-transaction-will-i-get-my-fees-back/",
+          "length": 207
+        },
+        {
+          "url": "https://debridge.com/support/how-does-dao-staking-work/",
+          "length": 236
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/develop/*",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/develop/*",
+      "count": 9,
+      "urls": [
+        "https://debridge.com/develop/wallets",
+        "https://debridge.com/develop/dexes",
+        "https://debridge.com/develop/payments",
+        "https://debridge.com/develop/institutions",
+        "https://debridge.com/develop/trading-terminals",
+        "https://debridge.com/develop/featured-integrations",
+        "https://debridge.com/develop/bots",
+        "https://debridge.com/develop/ecosystems",
+        "https://debridge.com/develop/ai-agents"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/develop/wallets",
+          "finalUrl": "https://debridge.com/develop/wallets/",
+          "linkedFrom": [
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/",
+            "https://debridge.com/learn/guides/"
+          ]
+        },
+        {
+          "url": "https://debridge.com/develop/dexes",
+          "finalUrl": "https://debridge.com/develop/dexes/",
+          "linkedFrom": [
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/",
+            "https://debridge.com/learn/guides/"
+          ]
+        },
+        {
+          "url": "https://debridge.com/develop/payments",
+          "finalUrl": "https://debridge.com/develop/payments/",
+          "linkedFrom": [
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/",
+            "https://debridge.com/learn/guides/"
+          ]
+        },
+        {
+          "url": "https://debridge.com/develop/institutions",
+          "finalUrl": "https://debridge.com/develop/institutions/",
+          "linkedFrom": [
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/",
+            "https://debridge.com/learn/guides/"
+          ]
+        },
+        {
+          "url": "https://debridge.com/develop/trading-terminals",
+          "finalUrl": "https://debridge.com/develop/trading-terminals/",
+          "linkedFrom": [
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/",
+            "https://debridge.com/learn/guides/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/learn/*",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/learn/*",
+      "count": 9,
+      "urls": [
+        "https://debridge.com/learn/blog",
+        "https://debridge.com/learn/guides",
+        "https://debridge.com/learn/glossary",
+        "https://debridge.com/learn/blog/introducing-debridge-iaas-a-turnkey-solution-for-evm-svm-cross-chain-interoperability-with-neon-labs-as-first-partner/",
+        "https://debridge.com/learn/blog/the-future-of-cross-chain-value-transfer-debridges-shift-to-asynchronous-infrastructure/",
+        "https://debridge.com/learn/blog/deswap-liquidity-network-dln-a-secure-new-paradigm-for-depthless-cross-chain-value-transfers/",
+        "https://debridge.com/learn/blog/breaking-the-bottleneck/",
+        "https://debridge.com/learn/blog/any-arbitrary-cross-chain-swaps-with-debridge-1inch-network/",
+        "https://debridge.com/learn/blog/deswap-api-decentralized-cross-chain-swaps-for-protocols-and-applications/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/learn/blog",
+          "finalUrl": "https://debridge.com/learn/blog/",
+          "linkedFrom": [
+            "https://debridge.com/learn/blog/arc-is-live-on-debridge/",
+            "https://debridge.com/learn/blog/introducing-debridge-mcp-universal-api-for-ai-agents/",
+            "https://debridge.com/learn/blog/megaeth-is-live-on-debridge/"
+          ]
+        },
+        {
+          "url": "https://debridge.com/learn/guides",
+          "finalUrl": "https://debridge.com/learn/guides/",
+          "linkedFrom": [
+            "https://debridge.com/learn/guides/bridge-to-arc/",
+            "https://debridge.com/learn/guides/how-to-bridge-eth-to-arbitrum/",
+            "https://debridge.com/learn/guides/tokenized-stocks-explained/"
+          ]
+        },
+        {
+          "url": "https://debridge.com/learn/glossary",
+          "finalUrl": "https://debridge.com/learn/glossary/",
+          "linkedFrom": [
+            "https://debridge.com/learn/glossary/address-2/",
+            "https://debridge.com/learn/glossary/airdrop-2/",
+            "https://debridge.com/learn/glossary/all-time-high-ath/"
+          ]
+        },
+        {
+          "url": "https://debridge.com/learn/blog/introducing-debridge-iaas-a-turnkey-solution-for-evm-svm-cross-chain-interoperability-with-neon-labs-as-first-partner/",
+          "finalUrl": "https://debridge.com/learn/blog/debridge-iaas-a-solution-for-evm-svm-interoperability/",
+          "linkedFrom": [
+            "https://debridge.com/learn/blog/introducing-debridge-points/",
+            "https://debridge.com/learn/blog/debridge-year-in-review-2023/",
+            "https://debridge.com/learn/blog/snapshot-of-debridge-points-season-1-launch-of-season-2/"
+          ]
+        },
+        {
+          "url": "https://debridge.com/learn/blog/the-future-of-cross-chain-value-transfer-debridges-shift-to-asynchronous-infrastructure/",
+          "finalUrl": "https://debridge.com/learn/blog/future-of-bridging-debridges-shift-to-asynchronous-infra/",
+          "linkedFrom": [
+            "https://debridge.com/learn/blog/introducing-exact-output-for-precise-cross-chain-payments/",
+            "https://debridge.com/learn/blog/debridge-year-in-review-2023/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.orphan-page|/swap/*",
+      "rule": "onpage.orphan-page",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "A page is in the sitemap but cannot be reached by links from the home page",
+      "scope": "page",
+      "pattern": "/swap/*",
+      "count": 7,
+      "urls": [
+        "https://debridge.com/swap/sol",
+        "https://debridge.com/swap/usdt",
+        "https://debridge.com/swap/wbtc",
+        "https://debridge.com/swap/sol-from-solana-to-usdc-on-ethereum",
+        "https://debridge.com/swap/usdc-from-solana-to-usdc-on-ethereum",
+        "https://debridge.com/swap/sol-from-solana-to-avalanche-on-avalanche",
+        "https://debridge.com/swap/usdc-from-solana-to-usdc-on-arbitrum"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/swap/sol",
+          "inlinks": 6
+        },
+        {
+          "url": "https://debridge.com/swap/usdt",
+          "inlinks": 6
+        },
+        {
+          "url": "https://debridge.com/swap/wbtc",
+          "inlinks": 5
+        },
+        {
+          "url": "https://debridge.com/swap/sol-from-solana-to-usdc-on-ethereum",
+          "inlinks": 8
+        },
+        {
+          "url": "https://debridge.com/swap/usdc-from-solana-to-usdc-on-ethereum",
+          "inlinks": 0
+        }
+      ]
+    },
+    {
+      "id": "onpage.description-length|/develop/*",
+      "rule": "onpage.description-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The meta description is too short or too long",
+      "scope": "page",
+      "pattern": "/develop/*",
+      "count": 6,
+      "urls": [
+        "https://debridge.com/develop/wallets/",
+        "https://debridge.com/develop/dexes/",
+        "https://debridge.com/develop/institutions/",
+        "https://debridge.com/develop/trading-terminals/",
+        "https://debridge.com/develop/ecosystems/",
+        "https://debridge.com/develop/ai-agents/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/develop/wallets/",
+          "length": 188
+        },
+        {
+          "url": "https://debridge.com/develop/dexes/",
+          "length": 180
+        },
+        {
+          "url": "https://debridge.com/develop/institutions/",
+          "length": 185
+        },
+        {
+          "url": "https://debridge.com/develop/trading-terminals/",
+          "length": 179
+        },
+        {
+          "url": "https://debridge.com/develop/ecosystems/",
+          "length": 179
+        }
+      ]
+    },
+    {
+      "id": "onpage.title-length|/develop/*",
+      "rule": "onpage.title-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The title is too short or too long",
+      "scope": "page",
+      "pattern": "/develop/*",
+      "count": 6,
+      "urls": [
+        "https://debridge.com/develop/dexes/",
+        "https://debridge.com/develop/institutions/",
+        "https://debridge.com/develop/trading-terminals/",
+        "https://debridge.com/develop/bots/",
+        "https://debridge.com/develop/ecosystems/",
+        "https://debridge.com/develop/ai-agents/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/develop/dexes/",
+          "length": 81,
+          "title": "Cross-Chain Liquidity for DEXs | Best Execution & Gasless Settlement via deBridge"
+        },
+        {
+          "url": "https://debridge.com/develop/institutions/",
+          "length": 78,
+          "title": "Institutional-Grade Cross-Chain Execution | deBridge for Funds & Market Makers"
+        },
+        {
+          "url": "https://debridge.com/develop/trading-terminals/",
+          "length": 84,
+          "title": "Cross-Chain Trading Infrastructure for Terminals | Guaranteed Execution via deBridge"
+        },
+        {
+          "url": "https://debridge.com/develop/bots/",
+          "length": 74,
+          "title": "Build Cross-Chain Trading Bots | Gasless, MEV-Safe Execution with deBridge"
+        },
+        {
+          "url": "https://debridge.com/develop/ecosystems/",
+          "length": 80,
+          "title": "Power Your Chain or Ecosystem with Universal Liquidity | deBridge Infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "onpage.title-length|/support/*",
+      "rule": "onpage.title-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The title is too short or too long",
+      "scope": "page",
+      "pattern": "/support/*",
+      "count": 3,
+      "urls": [
+        "https://debridge.com/support/how-does-debridge-guarantee-that-cross-chain-transfers-wont-fail-on-the-destination-chain/",
+        "https://debridge.com/support/can-i-customize-token-metadata-name-symbol-decimals-when-porting-via-deport/",
+        "https://debridge.com/support/is-it-possible-to-deploy-again-a-token-that-was-already-ported-through-deport/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/support/how-does-debridge-guarantee-that-cross-chain-transfers-wont-fail-on-the-destination-chain/",
+          "length": 91,
+          "title": "How does deBridge guarantee that cross-chain transfers won’t fail on the destination chain?"
+        },
+        {
+          "url": "https://debridge.com/support/can-i-customize-token-metadata-name-symbol-decimals-when-porting-via-deport/",
+          "length": 80,
+          "title": "Can I customize token metadata (name, symbol, decimals) when porting via dePort?"
+        },
+        {
+          "url": "https://debridge.com/support/is-it-possible-to-deploy-again-a-token-that-was-already-ported-through-deport/",
+          "length": 78,
+          "title": "Is it possible to deploy again a token that was already ported through dePort?"
+        }
+      ]
+    },
+    {
+      "id": "onpage.description-length|/swap/*",
+      "rule": "onpage.description-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The meta description is too short or too long",
+      "scope": "page",
+      "pattern": "/swap/*",
+      "count": 2,
+      "urls": [
+        "https://debridge.com/swap/usdc",
+        "https://debridge.com/swap/usdt"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/swap/usdc",
+          "length": 41
+        },
+        {
+          "url": "https://debridge.com/swap/usdt",
+          "length": 41
+        }
+      ]
+    },
+    {
+      "id": "onpage.og-incomplete|/case-studies/*",
+      "rule": "onpage.og-incomplete",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "Open Graph title, description or image is missing",
+      "scope": "page",
+      "pattern": "/case-studies/*",
+      "count": 2,
+      "urls": [
+        "https://debridge.com/case-studies/author/gal/",
+        "https://debridge.com/case-studies/author/hello/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/case-studies/author/gal/",
+          "missing": [
+            "og:description",
+            "og:image"
+          ]
+        },
+        {
+          "url": "https://debridge.com/case-studies/author/hello/",
+          "missing": [
+            "og:description",
+            "og:image"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.orphan-page|/case-studies/*",
+      "rule": "onpage.orphan-page",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "A page is in the sitemap but cannot be reached by links from the home page",
+      "scope": "page",
+      "pattern": "/case-studies/*",
+      "count": 2,
+      "urls": [
+        "https://debridge.com/case-studies/about/",
+        "https://debridge.com/case-studies/author/hello/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/case-studies/about/",
+          "inlinks": 0
+        },
+        {
+          "url": "https://debridge.com/case-studies/author/hello/",
+          "inlinks": 0
+        }
+      ]
+    },
+    {
+      "id": "index.canonical-not-self|/legal/",
+      "rule": "index.canonical-not-self",
+      "group": "index",
+      "severity": "low",
+      "summary": "The canonical points to a different URL of the site",
+      "scope": "page",
+      "pattern": "/legal/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/legal/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/legal/",
+          "canonical": "https://debridge.com/legal"
+        }
+      ]
+    },
+    {
+      "id": "index.canonical-not-self|/security/",
+      "rule": "index.canonical-not-self",
+      "group": "index",
+      "severity": "low",
+      "summary": "The canonical points to a different URL of the site",
+      "scope": "page",
+      "pattern": "/security/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/security/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/security/",
+          "canonical": "https://debridge.com/security"
+        }
+      ]
+    },
+    {
+      "id": "index.canonical-not-self|/vibe-trading/",
+      "rule": "index.canonical-not-self",
+      "group": "index",
+      "severity": "low",
+      "summary": "The canonical points to a different URL of the site",
+      "scope": "page",
+      "pattern": "/vibe-trading/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/vibe-trading/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/vibe-trading/",
+          "canonical": "https://debridge.com/vibe-trading"
+        }
+      ]
+    },
+    {
+      "id": "onpage.description-length|/develop/",
+      "rule": "onpage.description-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The meta description is too short or too long",
+      "scope": "page",
+      "pattern": "/develop/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/develop/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/develop/",
+          "length": 186
+        }
+      ]
+    },
+    {
+      "id": "onpage.description-length|/solutions/",
+      "rule": "onpage.description-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The meta description is too short or too long",
+      "scope": "page",
+      "pattern": "/solutions/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/solutions/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/solutions/",
+          "length": 202
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/",
+      "count": 1,
+      "urls": [
+        "http://debridge.com/?ref=debridge.com"
+      ],
+      "evidence": [
+        {
+          "url": "http://debridge.com/?ref=debridge.com",
+          "finalUrl": "https://debridge.com/?ref=debridge.com",
+          "linkedFrom": [
+            "https://debridge.com/learn/blog/introducing-debridge-com/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/about-us",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/about-us",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/about-us"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/about-us",
+          "finalUrl": "https://debridge.com/about-us/",
+          "linkedFrom": [
+            "https://debridge.com/",
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/brand",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/brand",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/brand"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/brand",
+          "finalUrl": "https://debridge.com/brand/",
+          "linkedFrom": [
+            "https://debridge.com/",
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/case-studies",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/case-studies",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/case-studies"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/case-studies",
+          "finalUrl": "https://debridge.com/case-studies/",
+          "linkedFrom": [
+            "https://debridge.com/case-studies/trust-wallet-case-study/",
+            "https://debridge.com/case-studies/sigma-case-study/",
+            "https://debridge.com/case-studies/bitget-wallet-case-study/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/develop",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/develop",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/develop"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/develop",
+          "finalUrl": "https://debridge.com/develop/",
+          "linkedFrom": [
+            "https://debridge.com/",
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/legal",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/legal",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/legal"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/legal",
+          "finalUrl": "https://debridge.com/legal/",
+          "linkedFrom": [
+            "https://debridge.com/",
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/security",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/security",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/security"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/security",
+          "finalUrl": "https://debridge.com/security/",
+          "linkedFrom": [
+            "https://debridge.com/",
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/solutions",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/solutions",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/solutions"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/solutions",
+          "finalUrl": "https://debridge.com/solutions/",
+          "linkedFrom": [
+            "https://debridge.com/",
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/support",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/support",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/support"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/support",
+          "finalUrl": "https://debridge.com/support/",
+          "linkedFrom": [
+            "https://debridge.com/support/q-does-debridges-dln-api-require-authentication-or-an-api-key-a-no-authentication-is-required-for-public-endpoints-such-as-v1-0-dln-order-create-tx-however-api-keys-are-available-for-hi/",
+            "https://debridge.com/support/what-are-debridge-hooks-and-how-do-they-work/",
+            "https://debridge.com/support/can-i-bridge-any-token/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.link-to-redirect|/vibe-trading",
+      "rule": "onpage.link-to-redirect",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "An internal link leads to a URL that redirects",
+      "scope": "page",
+      "pattern": "/vibe-trading",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/vibe-trading"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/vibe-trading",
+          "finalUrl": "https://debridge.com/vibe-trading/",
+          "linkedFrom": [
+            "https://debridge.com/case-studies/",
+            "https://debridge.com/learn/blog/",
+            "https://debridge.com/learn/guides/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.og-incomplete|/learn/*",
+      "rule": "onpage.og-incomplete",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "Open Graph title, description or image is missing",
+      "scope": "page",
+      "pattern": "/learn/*",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/learn/glossary/author/debridge/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/learn/glossary/author/debridge/",
+          "missing": [
+            "og:description",
+            "og:image"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.og-incomplete|/support/*",
+      "rule": "onpage.og-incomplete",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "Open Graph title, description or image is missing",
+      "scope": "page",
+      "pattern": "/support/*",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/support/author/debridge/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/support/author/debridge/",
+          "missing": [
+            "og:description",
+            "og:image"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onpage.orphan-page|/learn/",
+      "rule": "onpage.orphan-page",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "A page is in the sitemap but cannot be reached by links from the home page",
+      "scope": "page",
+      "pattern": "/learn/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/learn/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/learn/",
+          "inlinks": 0
+        }
+      ]
+    },
+    {
+      "id": "onpage.orphan-page|/support/*",
+      "rule": "onpage.orphan-page",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "A page is in the sitemap but cannot be reached by links from the home page",
+      "scope": "page",
+      "pattern": "/support/*",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/support/author/debridge/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/support/author/debridge/",
+          "inlinks": 0
+        }
+      ]
+    },
+    {
+      "id": "onpage.title-length|/develop/",
+      "rule": "onpage.title-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The title is too short or too long",
+      "scope": "page",
+      "pattern": "/develop/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/develop/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/develop/",
+          "length": 92,
+          "title": "Build Borderless Applications with deBridge | Universal Liquidity & Execution Infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "onpage.title-length|/solutions/",
+      "rule": "onpage.title-length",
+      "group": "onpage",
+      "severity": "low",
+      "summary": "The title is too short or too long",
+      "scope": "page",
+      "pattern": "/solutions/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/solutions/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/solutions/",
+          "length": 88,
+          "title": "deBridge Solutions | Universal Liquidity, Gasless Execution & Cross-Chain Infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "onpage.anchor-without-href|/swap/*",
+      "rule": "onpage.anchor-without-href",
+      "group": "onpage",
+      "severity": "info",
+      "summary": "Anchors without href: crawlers do not follow them",
+      "scope": "page",
+      "pattern": "/swap/*",
+      "count": 6,
+      "urls": [
+        "https://debridge.com/swap/eth?ref=debridge.com",
+        "https://debridge.com/swap/eth",
+        "https://debridge.com/swap/usdc",
+        "https://debridge.com/swap/sol",
+        "https://debridge.com/swap/usdt",
+        "https://debridge.com/swap/wbtc"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/swap/eth?ref=debridge.com",
+          "anchors": 1
+        },
+        {
+          "url": "https://debridge.com/swap/eth",
+          "anchors": 1
+        },
+        {
+          "url": "https://debridge.com/swap/usdc",
+          "anchors": 1
+        },
+        {
+          "url": "https://debridge.com/swap/sol",
+          "anchors": 1
+        },
+        {
+          "url": "https://debridge.com/swap/usdt",
+          "anchors": 1
+        }
+      ]
+    },
+    {
+      "id": "onpage.anchor-without-href|/solutions/",
+      "rule": "onpage.anchor-without-href",
+      "group": "onpage",
+      "severity": "info",
+      "summary": "Anchors without href: crawlers do not follow them",
+      "scope": "page",
+      "pattern": "/solutions/",
+      "count": 1,
+      "urls": [
+        "https://debridge.com/solutions/"
+      ],
+      "evidence": [
+        {
+          "url": "https://debridge.com/solutions/",
+          "anchors": 1
+        }
+      ]
+    }
+  ],
+  "suppressed": []
+}
