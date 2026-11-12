@@ -1,0 +1,78 @@
+{
+  "reviewed": "2026-11-12",
+  "note": "class: training = collects data for model training; search = builds an AI search index; user = fetches a page because a person asked. probeUserAgent is sent to the site to see how it answers that crawler; it contains the crawler's token, which is what user-agent based blocking matches on, but is not guaranteed to be the vendor's exact current string. Crawlers with probeUserAgent null are robots.txt-only tokens with no user agent of their own.",
+  "bots": [
+    {
+      "token": "GPTBot",
+      "vendor": "OpenAI",
+      "class": "training",
+      "probeUserAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot"
+    },
+    {
+      "token": "OAI-SearchBot",
+      "vendor": "OpenAI",
+      "class": "search",
+      "probeUserAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot"
+    },
+    {
+      "token": "ChatGPT-User",
+      "vendor": "OpenAI",
+      "class": "user",
+      "probeUserAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot"
+    },
+    {
+      "token": "ClaudeBot",
+      "vendor": "Anthropic",
+      "class": "training",
+      "probeUserAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)"
+    },
+    {
+      "token": "Claude-SearchBot",
+      "vendor": "Anthropic",
+      "class": "search",
+      "probeUserAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-SearchBot/1.0; +https://www.anthropic.com)"
+    },
+    {
+      "token": "Claude-User",
+      "vendor": "Anthropic",
+      "class": "user",
+      "probeUserAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +https://www.anthropic.com)"
+    },
+    {
+      "token": "PerplexityBot",
+      "vendor": "Perplexity",
+      "class": "search",
+      "probeUserAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)"
+    },
+    {
+      "token": "Perplexity-User",
+      "vendor": "Perplexity",
+      "class": "user",
+      "probeUserAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)"
+    },
+    {
+      "token": "Google-Extended",
+      "vendor": "Google",
+      "class": "training",
+      "probeUserAgent": null
+    },
+    {
+      "token": "Applebot-Extended",
+      "vendor": "Apple",
+      "class": "training",
+      "probeUserAgent": null
+    },
+    {
+      "token": "CCBot",
+      "vendor": "Common Crawl",
+      "class": "training",
+      "probeUserAgent": "CCBot/2.0 (https://commoncrawl.org/faq/)"
+    },
+    {
+      "token": "Bytespider",
+      "vendor": "ByteDance",
+      "class": "training",
+      "probeUserAgent": "Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile Safari/537.36 (compatible; Bytespider; spider-feedback@bytedance.com)"
+    }
+  ]
+}

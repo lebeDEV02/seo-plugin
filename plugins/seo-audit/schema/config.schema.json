@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "seo-audit configuration",
+  "type": "object",
+  "required": ["site"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "site": {
+      "type": "string",
+      "format": "uri",
+      "description": "Origin of the site to audit, for example https://example.com. This host is the one the others must redirect to."
+    },
+    "keyPages": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^/" },
+      "default": ["/"],
+      "description": "Paths of the pages that matter most. A problem on one of them is reported with higher severity, and AI crawler probes are sent to the first three."
+    },
+    "crawl": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxPages": { "type": "integer", "minimum": 1, "default": 300 },
+        "concurrency": { "type": "integer", "minimum": 1, "default": 4 },
+        "delayMs": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 100,
+          "description": "Minimum gap between request starts."
+        },
+        "timeoutMs": { "type": "integer", "minimum": 1000, "default": 15000 },
+        "userAgent": { "type": "string", "default": "seo-audit/0.1" },
+        "include": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Path globs. When set, only matching paths are crawled."
+        },
+        "exclude": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": ["/cdn-cgi/*"],
+          "description": "Path globs that are never crawled."
+        },
+        "respectRobots": {
+          "type": "boolean",
+          "default": true,
+          "description": "Skip paths that robots.txt disallows for all crawlers."
+        }
+      }
+    },
+    "expect": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "noindex": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Path globs of pages that are noindex on purpose."
+        }
+      }
+    },
+    "aiCrawlers": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The policy you intend for each class of AI crawler. The audit reports where robots.txt disagrees. \"any\" means no opinion.",
+      "properties": {
+        "training": { "enum": ["any", "allow", "block"], "default": "any" },
+        "search": { "enum": ["any", "allow", "block"], "default": "allow" },
+        "user": { "enum": ["any", "allow", "block"], "default": "allow" }
+      }
+    },
+    "llmsTxt": {
+      "enum": ["optional", "expected"],
+      "default": "optional",
+      "description": "\"expected\" raises a missing llms.txt from informational to medium. Use it for documentation and API sites."
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "titleMin": { "type": "integer", "default": 10 },
+        "titleMax": { "type": "integer", "default": 70 },
+        "descriptionMin": { "type": "integer", "default": 50 },
+        "descriptionMax": { "type": "integer", "default": 170 },
+        "rawWordsMin": {
+          "type": "integer",
+          "default": 100,
+          "description": "Fewer words than this in the HTML before JavaScript runs counts as an empty page for crawlers that do not render."
+        },
+        "tlsDaysHigh": { "type": "integer", "default": 21 },
+        "tlsDaysCritical": { "type": "integer", "default": 7 }
+      }
+    },
+    "ignore": {
+      "type": "array",
+      "description": "Findings you have accepted. Each needs a reason, and should carry an end date so it comes back for review.",
+      "items": {
+        "type": "object",
+        "required": ["rule", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "rule": { "type": "string", "description": "Rule id, for example onpage.h1-missing." },
+          "url": { "type": "string", "description": "Path glob. Omit to ignore the rule everywhere." },
+          "reason": { "type": "string" },
+          "until": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "output": { "type": "string", "default": ".seo-audit" }
+  }
+}
